@@ -1,0 +1,126 @@
+/* Set body styling */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.topbar a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.topbar a:hover {
+    color: coral;
+}
+
+.topbar {
+    color: black;
+    background-color: olivedrab;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+/* Positions at the baseline */
+.baseline {
+    display: flex;
+    flex: 1;
+    align-items: baseline;
+}
+
+/* Centers it's content */
+.wrapper {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Set the wrapper's height to cover the viewport height */
+    height: 100vh;
+}
+
+/* Styles for the menu icon */
+.burger-menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+}
+
+.burger-menu-bar {
+    background-color: black;
+    height: 3px;
+}
+
+/* Styles for the navigation side menu */
+.side-navbar {
+    background-color: beige;
+    width: 200px;
+    height: 100%;
+    top: 50px;
+    left: 0;
+    position: absolute;
+
+    display: none;
+}
+
+.side-navbar.active {
+    display: block;
+}
+
+.side-navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-navbar li {
+    margin: 10px 0;
+}
+
+.side-navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* Style for content container */
+.content-container {
+    background-color: #f2f2f2;
+    max-width: 800px;
+    /* Set the initial width of the content container */
+    /* width: 80%; */
+    padding: 25px;
+    /*border: 1px solid #ccc;*/
+    height: 100vh;
+
+    margin-left: 0px;
+}
+
+.content-container.side-navbar-active {
+    margin-left: 200px;
+}
+
+.content-container section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container section img {
+    margin-bottom: 20px;
+}
+
+.content-container section p {
+    margin-bottom: 20px;
+}
