@@ -11,6 +11,15 @@ body {
     box-sizing: border-box;
 }
 
+.topbar {
+    color: black;
+    background-color: olivedrab;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
 .topbar a {
     color: black;
     text-decoration: none;
@@ -21,13 +30,9 @@ body {
     color: coral;
 }
 
-.topbar {
-    color: black;
-    background-color: olivedrab;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    padding: 0px 20px;
+.logo{
+    flex: 1;
+    margin-left: 20px;
 }
 
 /* Positions at the baseline */
