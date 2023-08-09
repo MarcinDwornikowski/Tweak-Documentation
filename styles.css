@@ -30,7 +30,7 @@ body {
     color: coral;
 }
 
-.logo{
+.logo {
     flex: 1;
     margin-left: 20px;
 }
@@ -128,4 +128,77 @@ body {
 
 .content-container section p {
     margin-bottom: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+.table-of-contents {
+    margin: 20px;
+}
+
+.dropdown {
+    list-style: none;
+}
+
+.item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.has-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.nested-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.nested-dropdown.active {
+    display: block;
+}
+
+.content {
+    margin: 20px;
+    padding-top: 20px;
+    /* Add some spacing for the content */
 }
