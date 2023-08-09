@@ -9,30 +9,25 @@ document.addEventListener("DOMContentLoaded", function () {
         contentContainer.classList.toggle("side-navbar-active");
     });
 
-    // Dropdown menu
-    const dropdownBtn = document.querySelector(".dropbtn");
-    const dropdownContent = document.querySelector(".dropdown-content");
+    // Table of contents - Dropdown list
+    const items = document.getElementById("tableOfContents").querySelectorAll(".item");
+    const itemsWithDropdown = document.getElementById("tableOfContents").querySelectorAll('.has-dropdown');
 
-    dropdownBtn.addEventListener("click", function () {
-        dropdownContent.classList.toggle("active");
+    items.forEach(item => {
+        item.addEventListener("click", (event) => {
+            event.stopPropagation(); // Stop event propagation (childs calling the event on parents)
+        });
     });
-
-    window.addEventListener("click", function (event) {
-        if (!event.target.matches(".dropbtn")) {
-            if (dropdownContent.classList.contains("active")) {
-                dropdownContent.classList.remove("active");
-            }
-        }
-    });
-
-    // Dropdown list
-    const itemsWithDropdown = document.querySelectorAll('.has-dropdown');
 
     itemsWithDropdown.forEach(item => {
         const nestedDropdown = item.querySelector('.nested-dropdown');
-        const nextSibling = item.nextElementSibling;
 
-        item.addEventListener('click', () => {
+        var nextSibling = item.nextElementSibling;
+        if (nextSibling == null) {
+            nextSibling = getParentsNextSiblingRecursively(item);
+        }
+
+        item.querySelector(".dropdown-button").addEventListener('click', () => {
             nestedDropdown.classList.toggle('active');
 
             if (nestedDropdown.classList.contains('active')) {
@@ -42,4 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    function getParentsNextSiblingRecursively(element) {
+        var parent = element.parentElement;
+        var nextSibling = parent.nextElementSibling;
+        if (nextSibling == null)
+            return getParentsNextSiblingRecursively(parent);
+        else
+            return nextSibling;
+    }
 });
