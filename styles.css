@@ -144,7 +144,7 @@ body {
     cursor: pointer;
 }
 
-.table-of-contents .dropdown {
+.table-of-contents .table {
     list-style: none;
 
     /* position: relative; */
