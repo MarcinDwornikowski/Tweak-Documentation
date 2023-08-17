@@ -54,29 +54,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var nextSibling = item.nextElementSibling;
         let siblingLevelObj = {
-            SiblingLevel: 0
-            // SiblingLevel: []
+            //SiblingLevel: 0
+            SiblingLevel: []
         }
-        // var siblings = [];
-        // siblings.push(nextSibling);
-        // siblingLevelObj.push(0);
-
-        if (nextSibling == null) {
+        var siblings = [];
+        if (nextSibling != null) {
+            siblings.push(nextSibling);
+            siblingLevelObj.SiblingLevel.push(0);
+            var addToSiblings = getParentsNextSiblingRecursively(item, siblingLevelObj);
+            console.log('Add to siblings:');
+            console.log(addToSiblings);
+            for (let i = 0; i < addToSiblings.length; i++) {
+                const current = addToSiblings[i];
+                siblings.push(current);
+            }
+        }
+        else {
             // siblingLevelObj.SiblingLevel++;
-            nextSibling = getParentsNextSiblingRecursively(item, siblingLevelObj);
-            // siblings = getParentsNextSiblingRecursively(item, siblingLevelObj);
+            // nextSibling = getParentsNextSiblingRecursively(item, siblingLevelObj);
+            siblings = getParentsNextSiblingRecursively(item, siblingLevelObj);
         }
 
         const dropdownSiblingObj = {
             NestedDropdown: nestedDropdown,
-            Sibling: nextSibling,
-            // Sibling: siblings,
+            // Sibling: nextSibling,
+            Sibling: siblings,
             SiblingLevel: siblingLevelObj.SiblingLevel
         };
         console.log('Adding nested d:');
         console.log(nestedDropdown);
-        console.log('Sibling:');
-        console.log(nextSibling);
+        console.log('Siblings:');
+        console.log(siblings);
         console.log(siblingLevelObj.SiblingLevel);
         nestedDropdownsAndTheirSiblings.push(dropdownSiblingObj);
 
@@ -109,18 +117,42 @@ document.addEventListener("DOMContentLoaded", function () {
     // }
 
     function getParentsNextSiblingRecursively(element, siblingLevelObj) {
-        siblingLevelObj.SiblingLevel++;
-        var parent = element.parentElement;
+        // siblingLevelObj.SiblingLevel++;
+
+        var siblings = [];
+        var currentSiblingLevel = 0;
+
+        // var parent = [];
+        var currentParent = element.parentElement;
+        while (currentParent != document.getElementById("tableOfContents")) {
+            // parent.push(currentParent);
+            currentSiblingLevel++;
+
+            var currentSibling = null;
+            if (currentParent != null) {
+                currentSibling = currentParent.nextElementSibling;
+            }
+
+            if (currentSibling != null) {
+                siblings.push(currentSibling);
+                siblingLevelObj.SiblingLevel.push(currentSiblingLevel);
+            }
+
+            currentParent = currentParent.parentElement;
+        }
+        return siblings;
+
         // var parent = element.closest('.has-dropdown');
-        console.log(element);
-        console.log(parent);
-        var nextSibling = parent.nextElementSibling;
-        if (nextSibling == null) {
-            return getParentsNextSiblingRecursively(parent, siblingLevelObj);
-        }
-        else {
-            return nextSibling;
-        }
+        // console.log(element);
+        // console.log(parent);
+
+        // var nextSibling = parent.nextElementSibling;
+        // if (nextSibling == null) {
+        //     return getParentsNextSiblingRecursively(parent, siblingLevelObj);
+        // }
+        // else {
+        //     return nextSibling;
+        // }
     }
 
     // function calculateDropdownHeights(itemWithDropdown, nextSibling) {
@@ -142,42 +174,47 @@ document.addEventListener("DOMContentLoaded", function () {
         nestedDropdownsAndTheirSiblings.forEach(dropdown => {
             console.log('Dropdown:');
             console.log(dropdown.NestedDropdown);
+            console.log('Sibling lenght:');
+            console.log(dropdown.Sibling.length);
+            for (let i = 0; i < dropdown.Sibling.length; i++) {
+                const currentSibling = dropdown.Sibling[i];
 
-            var siblingMarginSet = false;
-            for (let i = 0; i < siblingMargins.length; i++) {
-                if (siblingMargins[i].Sibling == dropdown.Sibling) {
-                    siblingMarginSet = true;
-                }
-            }
-
-            if (dropdown.NestedDropdown.classList.contains('active')) {
-                const recursiveHeight = getDropdownTotalHeightRecursively(dropdown.NestedDropdown, dropdown.SiblingLevel);
-                // dropdown.Sibling.style.marginTop = recursiveHeight;
-                if (!siblingMarginSet) {
-                    dropdown.Sibling.style.marginTop = recursiveHeight;
-                    const siblingMarginObj = {
-                        Sibling: dropdown.Sibling,
-                        Margin: dropdown.Sibling.style.marginTop
-                    };
-                    siblingMargins.push(siblingMarginObj);
-                }
-                else {
-                    if (recursiveHeight > dropdown.Sibling.style.marginTop) {
-                        dropdown.Sibling.style.marginTop = recursiveHeight;
+                var siblingMarginSet = false;
+                for (let i = 0; i < siblingMargins.length; i++) {
+                    if (siblingMargins[i].Sibling == currentSibling) {
+                        siblingMarginSet = true;
                     }
                 }
-                console.log('Active, Sibling:');
-                console.log(dropdown.Sibling);
-                console.log('Margin:');
-                console.log(dropdown.Sibling.style.marginTop);
-            }
-            else {
-                if (!siblingMarginSet) {
-                    dropdown.Sibling.style.marginTop = '0';
-                    console.log('Not active, Sibling:');
-                    console.log(dropdown.Sibling);
+
+                if (dropdown.NestedDropdown.classList.contains('active')) {
+                    const recursiveHeight = getDropdownTotalHeightRecursively(dropdown.NestedDropdown, dropdown.SiblingLevel[i]);
+                    // dropdown.Sibling.style.marginTop = recursiveHeight;
+                    if (!siblingMarginSet) {
+                        currentSibling.style.marginTop = recursiveHeight;
+                        const siblingMarginObj = {
+                            Sibling: currentSibling,
+                            Margin: currentSibling.style.marginTop
+                        };
+                        siblingMargins.push(siblingMarginObj);
+                    }
+                    else {
+                        if (recursiveHeight > currentSibling.style.marginTop) {
+                            currentSibling.style.marginTop = recursiveHeight;
+                        }
+                    }
+                    console.log('Active, Sibling:');
+                    console.log(currentSibling);
                     console.log('Margin:');
-                    console.log(dropdown.Sibling.style.marginTop);
+                    console.log(currentSibling.style.marginTop);
+                }
+                else {
+                    if (!siblingMarginSet) {
+                        currentSibling.style.marginTop = '0';
+                        console.log('Not active, Sibling:');
+                        console.log(currentSibling);
+                        console.log('Margin:');
+                        console.log(currentSibling.style.marginTop);
+                    }
                 }
             }
         });
