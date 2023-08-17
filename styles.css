@@ -166,7 +166,7 @@ body {
 
 .table-of-contents .nested-dropdown {
     display: none;
-    position: absolute;
+    /* position: absolute; */
     top: 100%;
     left: 0;
 }

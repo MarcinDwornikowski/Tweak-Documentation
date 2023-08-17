@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //     nextSibling.style.marginTop = '0';
             // }
 
-            calculateDropdownHeights();
+            // calculateDropdownHeights();
         });
     }
 
