@@ -166,7 +166,6 @@ body {
 
 .table-of-contents .nested-dropdown {
     display: none;
-    /* position: absolute; */
     top: 100%;
     left: 0;
 }
@@ -178,5 +177,4 @@ body {
 .content {
     margin: 20px;
     padding-top: 20px;
-    /* Add some spacing for the content */
 }
