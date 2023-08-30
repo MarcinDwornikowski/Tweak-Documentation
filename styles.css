@@ -190,7 +190,7 @@ body {
 }
 
 .table-of-contents .dropdown-button.active {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(0, 0, 0, 0.06);
 }
 
 .table-of-contents .nested-dropdown {
