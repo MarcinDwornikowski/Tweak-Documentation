@@ -134,19 +134,19 @@ body {
 } */
 
 .table-of-contents .indent1 {
-    padding-left: 5px;
+    padding-left: 7px;
 }
 
 .table-of-contents .indent2 {
-    padding-left: 10px;
+    padding-left: 14px;
 }
 
 .table-of-contents .indent3 {
-    padding-left: 15px;
+    padding-left: 21px;
 }
 
 .table-of-contents .indent4 {
-    padding-left: 20px;
+    padding-left: 28px;
 }
 
 .table-of-contents .icon-arrow {
@@ -190,11 +190,11 @@ body {
 }
 
 .table-of-contents .dropdown-button.active {
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 .table-of-contents .nested-dropdown {
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(0, 0, 0, 0.03);
     display: none;
     top: 100%;
     left: 0;
