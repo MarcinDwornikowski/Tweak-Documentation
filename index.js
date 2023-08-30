@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Toggle the burger menu
+    // Burger menu toggle
     const burgerMenuIcon = document.getElementById("burgerMenuIcon");
     const sideNavbar = document.getElementById("sideNavbar");
     const contentContainer = document.getElementById("contentContainer");
@@ -9,24 +9,33 @@ document.addEventListener("DOMContentLoaded", function () {
         contentContainer.classList.toggle("side-navbar-active");
     });
 
-    // Table of contents - Dropdown list
-    const items = document.getElementById("tableOfContents").querySelectorAll(".item");
-    const itemsWithDropdown = document.getElementById("tableOfContents").querySelectorAll('.has-dropdown');
+    // Table of contents dropdowns
+    const dropdowns = document.getElementById("tableOfContents").querySelectorAll('.dropdown');
 
-    // Stop event propagation (childs calling the event on parents):
-    items.forEach(item => {
-        item.addEventListener("click", (event) => {
-            event.stopPropagation();
-        });
-    });
+    for (let i = 0; i < dropdowns.length; i++) {
+        const dropdown = dropdowns[i];
+        const nestedDropdown = dropdown.querySelector('.nested-dropdown');
+        const dropdownButton = dropdown.querySelector(".dropdown-button");
 
-    for (let i = 0; i < itemsWithDropdown.length; i++) {
-        const item = itemsWithDropdown[i];
-        const nestedDropdown = item.querySelector('.nested-dropdown');
+        const icon = dropdownButton.querySelector(".icon-arrow");
+        const iconInactivePath = "Assets/Icons/arrow-50-down.png";
+        const iconActivePath = "Assets/Icons/arrow-50-up.png";
 
-        // Add 'click' event to itemsWithDropdown:
-        item.querySelector(".dropdown-button").addEventListener('click', () => {
+        dropdownButton.addEventListener('click', () => {
             nestedDropdown.classList.toggle('active');
+
+            if (nestedDropdown.classList.contains('active')) {
+                icon.src = iconActivePath;
+                icon.alt = "Arrow up icon";
+
+                dropdownButton.classList.add('active');
+            }
+            else {
+                icon.src = iconInactivePath;
+                icon.alt = "Arrow down icon";
+
+                dropdownButton.classList.remove('active');
+            }
         });
     }
 });
