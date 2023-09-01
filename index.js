@@ -44,12 +44,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const tableOfContentsButtons = tableOfContents.querySelectorAll("button");
 
     tableOfContentsButtons.forEach(function (button) {
+        let previousBackgroundColor;
+
         button.addEventListener("mouseover", function () {
-            this.style.backgroundColor = "rgba(0, 0, 124, 0.1)";
+            previousBackgroundColor = button.style.backgroundColor;
+            button.style.backgroundColor = "rgba(0, 0, 124, 0.1)";
         });
 
         button.addEventListener("mouseout", function () {
-            this.style.backgroundColor = "rgba(0, 0, 0, 0)";
+            button.style.backgroundColor = previousBackgroundColor;
         });
     })
 });
