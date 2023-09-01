@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Table of contents dropdowns
-    const dropdowns = document.getElementById("tableOfContents").querySelectorAll('.dropdown');
+    const tableOfContents = document.getElementById("tableOfContents");
+    const dropdowns = tableOfContents.querySelectorAll('.dropdown');
 
     for (let i = 0; i < dropdowns.length; i++) {
         const dropdown = dropdowns[i];
@@ -37,5 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 dropdownButton.classList.remove('active');
             }
         });
-    }
+    };
+
+    // Custom hover for buttons in the table of contents:
+    const tableOfContentsButtons = tableOfContents.querySelectorAll("button");
+
+    tableOfContentsButtons.forEach(function (button) {
+        button.addEventListener("mouseover", function () {
+            this.style.backgroundColor = "rgba(0, 0, 124, 0.1)";
+        });
+
+        button.addEventListener("mouseout", function () {
+            this.style.backgroundColor = "rgba(0, 0, 0, 0)";
+        });
+    })
 });
