@@ -11,6 +11,7 @@ body {
     box-sizing: border-box;
 }
 
+/* TOPBAR: */
 .topbar {
     color: black;
     background-color: olivedrab;
@@ -42,32 +43,23 @@ body {
     align-items: baseline;
 }
 
-/* Centers it's content */
-.wrapper {
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Set the wrapper's height to cover the viewport height */
-    height: 100vh;
-}
-
-/* Styles for the menu icon */
+/* Styles for the burger menu icon */
 .burger-menu-icon {
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 20px;
     width: 30px;
+    height: 20px;
 }
 
+/* Shape for the burger menu icon */
 .burger-menu-bar {
     background-color: black;
     height: 3px;
 }
 
-/* Styles for the navigation side menu */
+/* SIDE NAVBAR: */
 .side-navbar {
     background-color: beige;
     width: 200px;
@@ -83,23 +75,9 @@ body {
     display: block;
 }
 
-/* .side-navbar ul {
-    list-style: none;
-    padding: 0;
-} */
-
-/* .side-navbar li {
-    margin: 10px 0;
-} */
-
-/* .side-navbar a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-} */
-
+/* Table of contents: */
 .table-of-contents {
-    margin: 15px;
+    margin: 7px;
 }
 
 .table-of-contents ul {
@@ -108,30 +86,14 @@ body {
 }
 
 .table-of-contents button {
-    padding: 0;
     background: none;
     border: none;
+    padding: 0;
     font-family: inherit;
     font-size: inherit;
     text-align: -webkit-match-parent;
     cursor: pointer;
 }
-
-/* .table-of-contents button:hover {
-    background-color: rgba(0, 0, 124, 0.1);
-} */
-
-.table-of-contents .table {
-    /* list-style: none; */
-
-    /* position: relative; */
-    /* display: inline-block; */
-}
-
-/* .table-of-contents li {
-    padding-top: 0;
-    margin-top: 0;
-} */
 
 .table-of-contents .indent1 {
     padding-left: 7px;
@@ -150,19 +112,16 @@ body {
 }
 
 .table-of-contents .icon-arrow {
-    height: 20px;
     width: auto;
-    padding-right: 5px;
+    height: 20px;
     /* Ensure the icon doesn't exceed it's container */
     max-width: 100%;
     max-height: 100%;
+    padding-right: 5px;
 }
 
 .table-of-contents .item {
-    /* background-color: aliceblue; */
-    /* border-bottom: 1px solid #ddd; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    /* margin-top: 0; */
 }
 
 .table-of-contents .item-button {
@@ -172,23 +131,22 @@ body {
     padding-bottom: 10px;
 }
 
+/* Dummy styling */
 .table-of-contents .dropdown {
-    /* position: relative; */
-    /* background-color: aliceblue; */
-    /* border-bottom: 1px solid #ddd; */
-    /* margin-top: 0; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 .table-of-contents .dropdown-button {
-    /* color: grey; */
-    /* background-color: aqua; */
-    /* border-bottom: 1px solid #ddd; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    padding-top: 10px;
-    padding-bottom: 10px;
     width: 100%;
     height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
+}
+
+.table-of-contents .dropdown-button p {
+    flex: 1;
 }
 
 .table-of-contents .dropdown-button.active {
@@ -206,21 +164,24 @@ body {
     display: block;
 }
 
-/* Style for content container */
+/* MAIN PAGE: */
+/* Centers it's content */
+.wrapper {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Set the wrapper's height to cover the viewport height */
+    height: 100vh;
+}
+
+/* Content container: */
 .content-container {
     background-color: #f2f2f2;
     max-width: 800px;
-    /* Set the initial width of the content container */
-    /* width: 80%; */
     padding: 25px;
-    /*border: 1px solid #ccc;*/
     height: 100vh;
-
     margin-left: 0px;
-}
-
-.content-container.side-navbar-active {
-    margin-left: 200px;
 }
 
 .content-container section {
@@ -236,4 +197,9 @@ body {
 
 .content-container section p {
     margin-bottom: 20px;
+}
+
+/* Applied when side navbar is active */
+.content-container.side-navbar-active {
+    margin-left: 200px;
 }
