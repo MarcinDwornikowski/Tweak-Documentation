@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const dropdownButton = dropdown.querySelector(".dropdown-button");
 
         const icon = dropdownButton.querySelector(".icon-arrow");
-        const iconInactivePath = "Assets/Icons/arrow-50-down.png";
-        const iconActivePath = "Assets/Icons/arrow-50-up.png";
+        const iconInactivePath = "Assets/Icons/arrow-thin-right.png";
+        const iconActivePath = "Assets/Icons/arrow-thin-up.png";
 
         dropdownButton.addEventListener('click', () => {
             nestedDropdown.classList.toggle('active');
