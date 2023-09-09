@@ -203,3 +203,18 @@ body {
 .content-container.side-navbar-active {
     margin-left: 200px;
 }
+
+.note {
+    background-color: #faf73260;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+    border: 1px solid #fffb00;
+    text-align: center;
+}
+
+.content-container section .note {
+    margin-bottom: 20px;
+}
