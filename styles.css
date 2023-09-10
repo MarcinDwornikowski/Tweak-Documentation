@@ -4,11 +4,18 @@ body {
     padding: 0;
 }
 
-/* Reset default margin and padding for all elements */
+/* Reset default styling for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* The below is needed in order to prevent the weird
+    behaviour of pre elements in combination with flex display parents.
+    The pre elements will not shrink in width properly if min-width is not
+    set to 0 on every child of the flex display parent until the pre element.
+    Here is an article explaining the problem:
+    https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-tags-and-managing-overflow*/
+    min-width: 0;
 }
 
 /* TOPBAR: */
@@ -206,15 +213,53 @@ body {
 
 .note {
     background-color: #faf73260;
+    border: 1px solid #fffb00;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 5px;
     padding-right: 5px;
     width: 100%;
-    border: 1px solid #fffb00;
     text-align: center;
 }
 
 .content-container section .note {
+    margin-bottom: 20px;
+}
+
+.code {
+    /* background-color: #0099FA60; */
+    /* border: 1px solid #096EAD; */
+    background-color: #1e1e1e60;
+    border: 1px solid #c7c7c7;
+    color: white;
+    width: 100%;
+}
+
+.code pre {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow-x: scroll;
+}
+
+/* Custom and always visible (when overflown) scrollbar for the code box: */
+.code pre::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+}
+
+.code pre::-webkit-scrollbar:horizontal {
+    -webkit-appearance: none;
+    height: 8px;
+}
+
+.code pre::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.content-container section .code {
     margin-bottom: 20px;
 }
