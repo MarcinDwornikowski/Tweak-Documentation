@@ -174,7 +174,6 @@ body {
 /* MAIN PAGE: */
 /* Centers it's content */
 .wrapper {
-    background-color: aqua;
     display: flex;
     justify-content: center;
     align-items: center;
