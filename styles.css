@@ -227,10 +227,8 @@ body {
 }
 
 .code {
-    /* background-color: #0099FA60; */
-    /* border: 1px solid #096EAD; */
-    background-color: #1e1e1e60;
-    border: 1px solid #c7c7c7;
+    background-color: #1e1e1e;
+    border: 1px solid #525252;
     color: white;
     width: 100%;
 }
@@ -258,6 +256,35 @@ body {
     border-radius: 10px;
     background-color: rgba(0, 0, 0, .1);
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+/* Colors for the code styling resembling default Visual Studio: */
+.code .blue {
+    color: #549ad4;
+}
+
+.code .lightBlue {
+    color: #9bdbff;
+}
+
+.code .green {
+    color: #4fcab0;
+}
+
+.code .lightGreen {
+    color: #b8d7a2;
+}
+
+.code .pink {
+    color: #d59e84;
+}
+
+.code .purple {
+    color: #c593cb;
+}
+
+.code .grey {
+    color: #909090;
 }
 
 .content-container section .code {

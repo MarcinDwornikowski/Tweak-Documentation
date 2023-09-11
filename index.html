@@ -167,15 +167,29 @@
                         This is a text inside the NOTE. Please note this note. It's kinda important.
                     </div>
                     <code class="code">
-                        <pre>&lt;html&gt;
-                            &lt;head&gt;
-                              &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-                              &lt;meta charset=&quot;utf-8&quot;&gt;
-                              &lt;meta name=&quot;description&quot; content=&quot;This is simply an demonstration of HTML (which stands for HyperText Markup Language) document markup.&quot;&gt;
-                              &lt;meta name=&quot;author&quot; content=&quot;SitePoint&quot;&gt;
-                              &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-                            &lt;/head&gt;
-                          &lt;/html&gt;</pre>
+                        <pre><span class="blue">public class</span> <span class="green">YourClass</span> : <span class="green">MonoBehaviour</span>
+{
+    <span class="blue">private</span> <span class="green">Tweak</span> _tweak;
+                            
+    <span class="blue">private void</span> Awake()
+    {
+        _tweak = <span class="blue">new</span> <span class="green">Tweak</span>(<span class="blue">this</span>, 0);
+        _animator = GetComponent&lt;<span class="green">Animator</span>&gt;();
+        _nextCondition = next.GetComponent&lt;<span class="green">ButtonConditionalExtension</span>&gt;();
+                            
+        <span class="green">Debug</span>.Log(<span class="pink">"Hello World!"</span>);
+    }
+                                                    
+    <span class="blue">private void</span> Start()
+    {
+        <span class="purple">if</span> (showOnStart)
+            Show();
+                                                    
+    next.Trigger.AddListener(<span class="grey">UnityEngine.EventSystems</span>.<span class="lightGreen">EventTriggerType</span>.<span class="lightBlue">PointerDown</span>, NextSlide);
+    start.Trigger.AddListener(<span class="grey">UnityEngine.EventSystems</span>.<span class="lightGreen">EventTriggerType</span>.<span class="lightBlue">PointerDown</span>, HideWindow);
+    keyboard.OnKeyPressed += CheckCondition;
+    }
+}</pre>
                     </code>
                 </section>
             </div>
