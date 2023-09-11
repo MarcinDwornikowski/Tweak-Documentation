@@ -45,7 +45,8 @@ body {
 /* Colors for the logo: */
 .logo .grey {
     /* color: #37373760; */
-    color: #4c4c4c60;
+    /* color: #4c4c4c60; */
+    color: #000000;
 }
 
 /* Fonts for the Unity logo: */
@@ -81,6 +82,27 @@ body {
     -moz-transform: scale(1.25, 1);
     -o-transform: scale(1.25, 1);
     transform: scale(1.25, 1);
+}
+
+.logo .unityLogoContainer {
+    margin-left: 5px;
+    opacity: 0.20;
+    bottom: 5px;
+}
+
+.logo .unityLogoImageContainer {
+    /* width: 200px; */
+    /* background-color: aqua; */
+    overflow: hidden;
+    position: absolute;
+    top: 8px;
+    left: 210px;
+    height: 36px;
+}
+
+.logo .unityLogoImage {
+    height: 40px;
+
 }
 
 /* Positions at the baseline */
