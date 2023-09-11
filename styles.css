@@ -44,7 +44,43 @@ body {
 
 /* Colors for the logo: */
 .logo .grey {
-    color: #37373760;
+    /* color: #37373760; */
+    color: #4c4c4c60;
+}
+
+/* Fonts for the Unity logo: */
+@font-face {
+    font-family: unityFont;
+    src: url(assets/fonts/itc_avant_garde_gothic_demi.ttf);
+}
+
+@font-face {
+    font-family: unityFont;
+    src: url(assets/fonts/itc_avant_garde_gothic_demi_bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: unityFontT;
+    src: url(assets/fonts/oswald/oswald_regular.ttf);
+}
+
+.unityFont {
+    font-family: unityFont;
+    font-weight: bold;
+}
+
+.unityFontT {
+    font-family: unityFontt;
+}
+
+.logo .unityLogo {
+    display: inline-block;
+    margin: 7px;
+    -webkit-transform: scale(1.25, 1);
+    -moz-transform: scale(1.25, 1);
+    -o-transform: scale(1.25, 1);
+    transform: scale(1.25, 1);
 }
 
 /* Positions at the baseline */
