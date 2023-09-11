@@ -39,8 +39,12 @@ body {
 }
 
 .logo {
-    flex: 1;
     margin-left: 20px;
+}
+
+/* Colors for the logo: */
+.logo .grey {
+    color: #37373760;
 }
 
 /* Positions at the baseline */
