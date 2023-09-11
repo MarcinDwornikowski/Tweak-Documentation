@@ -254,7 +254,7 @@ body {
 
 .code pre::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: #d7d8d795;
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
