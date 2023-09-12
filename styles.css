@@ -42,9 +42,19 @@ body {
     margin-left: 20px;
 }
 
+@font-face {
+    font-family: unityFont;
+    src: url(assets/fonts/itc_avant_garde_gothic_demi.ttf);
+}
+
+.unityFont {
+    font-family: unityFont;
+    font-weight: bold;
+}
+
 .logo .unityLogoContainer {
     margin-left: 8px;
-    opacity: 0.20;
+    opacity: 0.6;
     bottom: 5px;
 }
 
