@@ -18,8 +18,19 @@ body {
     min-width: 0;
 }
 
+/* Centers it's content */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Set the wrapper's height to cover the viewport height */
+    min-height: 100vh;
+}
+
 /* TOPBAR: */
 .topbar {
+    position: sticky;
+    top: 0;
     color: black;
     background-color: olivedrab;
     height: 50px;
@@ -71,9 +82,13 @@ body {
     background-color: beige;
     width: 200px;
     height: 100%;
+    max-height: 100%;
     top: 50px;
     left: 0;
     position: absolute;
+    overflow-y: auto;
+    /* Change direction so that the scrollbar is on the left: */
+    direction: rtl;
 
     display: none;
 }
@@ -82,9 +97,28 @@ body {
     display: block;
 }
 
+/* Custom scrollbar for the code side-navbar: */
+.side-navbar::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+}
+
+.side-navbar::-webkit-scrollbar:horizontal {
+    -webkit-appearance: none;
+    height: 8px;
+}
+
+.side-navbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #b6b6b695;
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
 /* Table of contents: */
 .table-of-contents {
     margin: 7px;
+    /* Change direction back to normal: */
+    direction: ltr;
 }
 
 .table-of-contents ul {
@@ -172,15 +206,6 @@ body {
 }
 
 /* MAIN PAGE: */
-/* Centers it's content */
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Set the wrapper's height to cover the viewport height */
-    min-height: 100vh;
-}
-
 /* Content container: */
 .content-container {
     background-color: #f2f2f2;
