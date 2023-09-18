@@ -2,6 +2,9 @@
 body {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Reset default styling for all elements */
@@ -21,10 +24,9 @@ body {
 /* Centers it's content */
 .wrapper {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    /* Set the wrapper's height to cover the viewport height */
-    min-height: 100vh;
+    flex: 1 0;
 }
 
 /* TOPBAR: */
@@ -210,8 +212,9 @@ body {
 .content-container {
     background-color: #f2f2f2;
     max-width: 800px;
+    width: 100%;
     padding: 25px;
-    height: 100vh;
+    flex: 1 0;
     margin-left: 0px;
 }
 
