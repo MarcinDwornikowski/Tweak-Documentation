@@ -178,7 +178,7 @@ body {
     justify-content: center;
     align-items: center;
     /* Set the wrapper's height to cover the viewport height */
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Content container: */
