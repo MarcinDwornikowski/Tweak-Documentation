@@ -29,9 +29,22 @@ body {
     flex: 1 0;
 }
 
+.foreground-fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
 /* TOPBAR: */
+.under-topbar {
+    /* Compensate topbar's height: */
+    padding-top: 50px;
+}
+
 .topbar {
-    position: sticky;
     top: 0;
     color: black;
     background-color: olivedrab;
@@ -39,6 +52,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0px 20px;
+    pointer-events: auto;
 }
 
 .topbar a {
@@ -83,14 +97,12 @@ body {
 .side-navbar {
     background-color: beige;
     width: 200px;
-    height: 100%;
-    top: 50px;
+    flex: 1;
     left: 0;
-    position: fixed;
     overflow-y: auto;
     /* Change direction so that the scrollbar is on the left: */
     direction: rtl;
-    /* z-index: -1; */
+    pointer-events: auto;
 
     display: none;
 }

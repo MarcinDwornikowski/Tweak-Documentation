@@ -9,143 +9,148 @@
 </head>
 
 <body>
-    <header class="topbar" id="topbar">
-        <div class="menu-container">
-            <div class="burger-menu-icon" id="burgerMenuIcon">
-                <div class="burger-menu-bar"></div>
-                <div class="burger-menu-bar"></div>
-                <div class="burger-menu-bar"></div>
+    <div class="foreground-fixed">
+        <header class="topbar" id="topbar">
+            <div class="menu-container">
+                <div class="burger-menu-icon" id="burgerMenuIcon">
+                    <div class="burger-menu-bar"></div>
+                    <div class="burger-menu-bar"></div>
+                    <div class="burger-menu-bar"></div>
+                </div>
             </div>
-        </div>
-        <div class="baseline">
-            <div class="logo" id="logo">
-                <h1>Tweak</h1>
+            <div class="baseline">
+                <div class="logo" id="logo">
+                    <h1>Tweak</h1>
+                </div>
+                <nav id="navbar">
+                    <a href="#">About</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Download</a>
+                </nav>
             </div>
-            <nav id="navbar">
-                <a href="#">About</a>
-                <a href="#">Documentation</a>
-                <a href="#">Download</a>
-            </nav>
-        </div>
-    </header>
-    <nav class="side-navbar" id="sideNavbar">
-        <div class="table-of-contents" id="tableOfContents">
-            <ul>
-                <li class="item">
-                    <button class="item-button">Chapter 1</button>
-                </li>
-                <li class="dropdown">
-                    <button class="dropdown-button">
-                        <p>Chapter 2</p>
-                        <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon" class="icon-arrow">
-                    </button>
-                    <ul class="nested-dropdown">
-                        <li class="item">
-                            <button class="item-button indent1">Chapter 2.1</button>
-                        </li>
-                        <li class="item">
-                            <button class="item-button indent1">Chapter 2.2</button>
-                        </li>
-                        <li class="dropdown">
-                            <button class="dropdown-button indent1">
-                                <p>Chapter 2.3</p>
-                                <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon" class="icon-arrow">
-                            </button>
-                            <ul class="nested-dropdown">
-                                <li class="item">
-                                    <button class="item-button indent2">Chapter 2.3 A</button>
-                                </li>
-                                <li class="item">
-                                    <button class="item-button indent2">Chapter 2.3 B</button>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <button class="dropdown-button indent1">
-                                <p>Chapter 2.4</p>
-                                <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon" class="icon-arrow">
-                            </button>
-                            <ul class="nested-dropdown">
-                                <li class="item">
-                                    <button class="item-button indent2">Chapter 2.4 A</button>
-                                </li>
-                                <li class="item">
-                                    <button class="item-button indent2">Chapter 2.4 B</button>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <button class="dropdown-button indent1">
-                                <p>Chapter 2.5</p>
-                                <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon" class="icon-arrow">
-                            </button>
-                            <ul class="nested-dropdown">
-                                <li class="item">
-                                    <button class="item-button indent2">Chapter 2.5 A</button>
-                                </li>
-                                <li class="item">
-                                    <button class="item-button indent2">Chapter 2.5 B</button>
-                                </li>
-                                <li class="dropdown">
-                                    <button class="dropdown-button indent2">
-                                        <p>Chapter 2.5 C</p>
-                                        <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon"
-                                            class="icon-arrow">
-                                    </button>
-                                    <ul class="nested-dropdown">
-                                        <li class="item">
-                                            <button class="item-button indent3">Section 2.5 C A</button>
-                                        </li>
-                                        <li class="item">
-                                            <button class="item-button indent3">Section 2.5 C B</button>
-                                        </li>
-                                        <li class="dropdown">
-                                            <button class="dropdown-button indent3">
-                                                <p>Section 2.5 C C</p>
-                                                <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon"
-                                                    class="icon-arrow">
-                                            </button>
-                                            <ul class="nested-dropdown">
-                                                <li class="item">
-                                                    <button class="item-button indent4">Section 2.5 C D
-                                                        tajne</button>
-                                                </li>
-                                                <li class="item">
-                                                    <button class="item-button indent4">Section 2.5 C D super
-                                                        tajne</button>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="item">
-                    <button class="item-button">Chapter 3</button>
-                </li>
-                <li class="dropdown">
-                    <button class="dropdown-button">
-                        <p>Chapter 4</p>
-                        <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon" class="icon-arrow">
-                    </button>
-                    <ul class="nested-dropdown">
-                        <li class="item">
-                            <button class="item-button indent1">Section 4.1</button>
-                        </li>
-                        <li class="item">
-                            <button class="item-button indent1">Section 4.2</button>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div>
-                <p style="margin-top: 20px;">This is the content below the table of contents.</p>
+        </header>
+        <nav class="side-navbar" id="sideNavbar">
+            <div class="table-of-contents" id="tableOfContents">
+                <ul>
+                    <li class="item">
+                        <button class="item-button">Chapter 1</button>
+                    </li>
+                    <li class="dropdown">
+                        <button class="dropdown-button">
+                            <p>Chapter 2</p>
+                            <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon" class="icon-arrow">
+                        </button>
+                        <ul class="nested-dropdown">
+                            <li class="item">
+                                <button class="item-button indent1">Chapter 2.1</button>
+                            </li>
+                            <li class="item">
+                                <button class="item-button indent1">Chapter 2.2</button>
+                            </li>
+                            <li class="dropdown">
+                                <button class="dropdown-button indent1">
+                                    <p>Chapter 2.3</p>
+                                    <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon"
+                                        class="icon-arrow">
+                                </button>
+                                <ul class="nested-dropdown">
+                                    <li class="item">
+                                        <button class="item-button indent2">Chapter 2.3 A</button>
+                                    </li>
+                                    <li class="item">
+                                        <button class="item-button indent2">Chapter 2.3 B</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <button class="dropdown-button indent1">
+                                    <p>Chapter 2.4</p>
+                                    <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon"
+                                        class="icon-arrow">
+                                </button>
+                                <ul class="nested-dropdown">
+                                    <li class="item">
+                                        <button class="item-button indent2">Chapter 2.4 A</button>
+                                    </li>
+                                    <li class="item">
+                                        <button class="item-button indent2">Chapter 2.4 B</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <button class="dropdown-button indent1">
+                                    <p>Chapter 2.5</p>
+                                    <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon"
+                                        class="icon-arrow">
+                                </button>
+                                <ul class="nested-dropdown">
+                                    <li class="item">
+                                        <button class="item-button indent2">Chapter 2.5 A</button>
+                                    </li>
+                                    <li class="item">
+                                        <button class="item-button indent2">Chapter 2.5 B</button>
+                                    </li>
+                                    <li class="dropdown">
+                                        <button class="dropdown-button indent2">
+                                            <p>Chapter 2.5 C</p>
+                                            <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon"
+                                                class="icon-arrow">
+                                        </button>
+                                        <ul class="nested-dropdown">
+                                            <li class="item">
+                                                <button class="item-button indent3">Section 2.5 C A</button>
+                                            </li>
+                                            <li class="item">
+                                                <button class="item-button indent3">Section 2.5 C B</button>
+                                            </li>
+                                            <li class="dropdown">
+                                                <button class="dropdown-button indent3">
+                                                    <p>Section 2.5 C C</p>
+                                                    <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon"
+                                                        class="icon-arrow">
+                                                </button>
+                                                <ul class="nested-dropdown">
+                                                    <li class="item">
+                                                        <button class="item-button indent4">Section 2.5 C D
+                                                            tajne</button>
+                                                    </li>
+                                                    <li class="item">
+                                                        <button class="item-button indent4">Section 2.5 C D super
+                                                            tajne</button>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        <button class="item-button">Chapter 3</button>
+                    </li>
+                    <li class="dropdown">
+                        <button class="dropdown-button">
+                            <p>Chapter 4</p>
+                            <img src="Assets/Icons/arrow-thin-right.png" alt="Arrow right icon" class="icon-arrow">
+                        </button>
+                        <ul class="nested-dropdown">
+                            <li class="item">
+                                <button class="item-button indent1">Section 4.1</button>
+                            </li>
+                            <li class="item">
+                                <button class="item-button indent1">Section 4.2</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div>
+                    <p style="margin-top: 20px;">This is the content below the table of contents.</p>
+                </div>
             </div>
-        </div>
-    </nav>
-    <div class="wrapper">
+        </nav>
+    </div>
+    <div class="wrapper under-topbar">
         <main class="content-container" id="contentContainer">
             <section>
                 <img src="https://picsum.photos/200/300" alt="Lorem picsum" />
