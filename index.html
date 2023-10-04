@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <header>
-        <div class="topbar" id="topbar">
+    <div class="foreground-fixed">
+        <header class="topbar" id="topbar">
             <div class="menu-container">
                 <div class="burger-menu-icon" id="burgerMenuIcon">
                     <div class="burger-menu-bar"></div>
@@ -28,9 +28,7 @@
                     <a href="#">Download</a>
                 </nav>
             </div>
-        </div>
-    </header>
-    <div class="wrapper">
+        </header>
         <nav class="side-navbar" id="sideNavbar">
             <div class="table-of-contents" id="tableOfContents">
                 <ul>
@@ -151,22 +149,23 @@
                 </div>
             </div>
         </nav>
-        <main>
-            <div class="content-container" id="contentContainer">
-                <section>
-                    <img src="https://picsum.photos/200/300" alt="Lorem picsum" />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc massa, fermentum et
-                        varius
-                        et, porttitor sit amet est. Praesent varius mattis turpis, id rutrum enim porttitor
-                        quis.
-                        Mauris
-                        sed magna sit amet magna elementum condimentum.
-                    </p>
-                    <div class="note">
-                        This is a text inside the NOTE. Please note this note. It's kinda important.
-                    </div>
-                    <code class="code">
+    </div>
+    <div class="wrapper under-topbar">
+        <main class="content-container" id="contentContainer">
+            <section>
+                <img src="https://picsum.photos/200/300" alt="Lorem picsum" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc massa, fermentum et
+                    varius
+                    et, porttitor sit amet est. Praesent varius mattis turpis, id rutrum enim porttitor
+                    quis.
+                    Mauris
+                    sed magna sit amet magna elementum condimentum.
+                </p>
+                <div class="note">
+                    This is a text inside the NOTE. Please note this note. It's kinda important.
+                </div>
+                <code class="code">
                         <pre><span class="blue">public class</span> <span class="green">YourClass</span> : <span class="green">MonoBehaviour</span>
 {
     <span class="blue">private</span> <span class="green">Tweak</span> _tweak;
@@ -191,8 +190,7 @@
     }
 }</pre>
                     </code>
-                </section>
-            </div>
+            </section>
         </main>
     </div>
     <script src="index.js"></script>
