@@ -277,7 +277,8 @@ body {
     padding-bottom: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    overflow-x: scroll;
+    max-height: 375px;
+    overflow: scroll;
 }
 
 /* Custom and always visible (when overflown) scrollbar for the code box: */
@@ -295,6 +296,10 @@ body {
     border-radius: 10px;
     background-color: #d7d8d795;
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+::-webkit-scrollbar-corner {
+    display: none;
 }
 
 /* Colors for the code styling resembling default Visual Studio: */
