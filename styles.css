@@ -237,11 +237,7 @@ body {
     justify-content: center;
 }
 
-.content-container section img {
-    margin-bottom: 20px;
-}
-
-.content-container section p {
+.content-container section>* {
     margin-bottom: 20px;
 }
 
@@ -259,10 +255,6 @@ body {
     padding-right: 5px;
     width: 100%;
     text-align: center;
-}
-
-.content-container section .note {
-    margin-bottom: 20px;
 }
 
 .code {
@@ -329,8 +321,4 @@ body {
 
 .code .grey {
     color: #909090;
-}
-
-.content-container section .code {
-    margin-bottom: 20px;
 }
