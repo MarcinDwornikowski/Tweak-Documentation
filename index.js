@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     };
 
-    // Custom hover for buttons in the table of contents:
+    // Hover and touch events for the buttons in the table of contents:
     const tableOfContentsButtons = tableOfContents.querySelectorAll("button");
 
     tableOfContentsButtons.forEach(function (button) {
@@ -52,6 +52,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         button.addEventListener("mouseout", function () {
+            button.style.backgroundColor = previousBackgroundColor;
+        });
+
+        button.addEventListener("touchstart", function (event) {
+            event.preventDefault();
+            previousBackgroundColor = button.style.backgroundColor;
+            button.style.backgroundColor = "rgba(0, 0, 124, 0.1)";
+            // event.preventDefault() prevents the click event so we invoke it manually:
+            button.click();
+        });
+
+        button.addEventListener("touchend", function () {
             button.style.backgroundColor = previousBackgroundColor;
         });
     })
