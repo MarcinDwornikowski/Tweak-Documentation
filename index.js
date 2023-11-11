@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     // Burger menu toggle:
     const burgerMenuIcon = document.getElementById('burgerMenuIcon');
     const sideNavbar = document.getElementById('sideNavbar');
@@ -13,36 +13,37 @@ document.addEventListener('DOMContentLoaded', function () {
     const tableOfContents = document.getElementById('tableOfContents');
     const tableOfContentsButtons = tableOfContents.querySelectorAll('button');
 
-    tableOfContentsButtons.forEach(function (button) {
+    tableOfContentsButtons.forEach(button => {
         let previousBackgroundColor;
 
-        button.addEventListener('mouseover', function () {
+        button.addEventListener('mouseover', () => {
             previousBackgroundColor = button.style.backgroundColor;
             button.style.backgroundColor = 'rgba(0, 0, 124, 0.1)';
         });
 
-        button.addEventListener('mouseout', function () {
+        button.addEventListener('mouseout', () => {
             button.style.backgroundColor = previousBackgroundColor;
         });
 
-        button.addEventListener('touchstart', function (event) {
+        button.addEventListener('touchstart', event => {
             event.preventDefault();
             previousBackgroundColor = button.style.backgroundColor;
             button.style.backgroundColor = 'rgba(0, 0, 124, 0.1)';
-            // event.preventDefault() prevents the click event so we invoke it manually:
+            // the event.preventDefault() prevents the click event so we invoke it manually:
             button.click();
         });
 
-        button.addEventListener('touchend', function () {
+        button.addEventListener('touchend', () => {
             button.style.backgroundColor = previousBackgroundColor;
         });
     });
 
-    // Table of contents indents:
+    // Table of contents button paddings:
     function tableOfContentsApplyPadding() {
         let regularPadding = 2;
         let baseIndentPadding = 5;
 
+        // Different paddings for different versions of the layout:
         if (window.innerWidth < 768) {
             baseIndentPadding = 3;
         }
@@ -80,10 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', tableOfContentsApplyPadding);
 
     // Table of contents dropdowns:
-    const dropdowns = tableOfContents.querySelectorAll('.dropdown');
+    const tableOfContentsDropdowns = tableOfContents.querySelectorAll('.dropdown');
 
-    for (let i = 0; i < dropdowns.length; i++) {
-        const dropdown = dropdowns[i];
+    tableOfContentsDropdowns.forEach(dropdown => {
         const nestedDropdown = dropdown.querySelector('.nested-dropdown');
         const dropdownButton = dropdown.querySelector('.dropdown-button');
 
@@ -92,20 +92,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const iconActivePath = 'Assets/Icons/arrow-thin-up.png';
 
         dropdownButton.addEventListener('click', () => {
-            nestedDropdown.classList.toggle('active');
+            dropdownButton.classList.toggle('active');
 
-            if (nestedDropdown.classList.contains('active')) {
+            if (dropdownButton.classList.contains('active')) {
                 icon.src = iconActivePath;
                 icon.alt = 'Arrow up icon';
 
-                dropdownButton.classList.add('active');
+                nestedDropdown.classList.add('active');
             }
             else {
                 icon.src = iconInactivePath;
                 icon.alt = 'Arrow right icon';
 
-                dropdownButton.classList.remove('active');
+                nestedDropdown.classList.remove('active');
             }
         });
-    };
+    });
 });
