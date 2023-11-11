@@ -152,9 +152,8 @@ body {
     background-color: beige;
     flex: 1;
     left: 0;
-    overflow-y: auto;
-    /* Change direction so that the scrollbar is on the left: */
-    direction: rtl;
+    position: relative;
+    overflow: hidden;
     pointer-events: auto;
 
     display: none;
@@ -176,40 +175,29 @@ body {
     display: block;
 }
 
-/* Custom scrollbar for the side-navbar: */
-.side-navbar::-webkit-scrollbar {
-    -webkit-appearance: none;
-    /* width: 8px; */
-    width: 0px;
-}
-
-.side-navbar::-webkit-scrollbar:horizontal {
-    -webkit-appearance: none;
-    /* height: 8px; */
-    height: 0px;
-}
-
-.side-navbar::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #b6b6b695;
-    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-}
-
 /* Table of contents: */
 .table-of-contents {
-    /* Change direction back to normal: */
-    direction: ltr;
+    position: absolute;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /* Add some space to the right (hidden by the parent) - to hide the scrollbar: */
+    right: -100px;
+    padding-right: 100px;
 }
 
 @media screen and (max-width: 768px) {
     .table-of-contents {
-        margin: 3px;
+        margin: 0px 3px 0px 3px;
+        padding-top: 3px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .table-of-contents {
-        margin: 7px;
+        margin: 0px 7px 0px 7px;
+        padding-top: 7px;
     }
 }
 
