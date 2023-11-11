@@ -196,8 +196,8 @@ body {
 
 @media screen and (min-width: 768px) {
     .table-of-contents {
-        margin: 0px 7px 0px 7px;
-        padding-top: 7px;
+        margin: 0px 5px 0px 5px;
+        padding-top: 5px;
     }
 }
 
@@ -227,22 +227,6 @@ body {
     .table-of-contents button {
         font-size: 16px;
     }
-}
-
-.table-of-contents .indent1 {
-    padding-left: 7px;
-}
-
-.table-of-contents .indent2 {
-    padding-left: 14px;
-}
-
-.table-of-contents .indent3 {
-    padding-left: 21px;
-}
-
-.table-of-contents .indent4 {
-    padding-left: 28px;
 }
 
 .table-of-contents .icon-arrow {
