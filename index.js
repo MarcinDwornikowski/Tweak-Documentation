@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contentContainer.classList.toggle('side-navbar-active');
     });
 
-    // Table of contents custom hover and touch events:
+    // Table of contents custom hover and touch events for the buttons:
     const tableOfContents = document.getElementById('tableOfContents');
     const tableOfContentsButtons = tableOfContents.querySelectorAll('button');
 
@@ -38,17 +38,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    tableOfContents.addEventListener('touchstart', function () {
-        // Disable pointer events on buttons when scrolling starts
-        for (var i = 0; i < tableOfContentsButtons.length; i++) {
-            tableOfContentsButtons[i].style.pointerEvents = 'none';
+    // Table of contents allowing scroll over buttons on touch devices (scrolling manually):
+    let touchStartY;
+    let tableOfContentsScrollTopStartPos;
+
+    tableOfContents.addEventListener('touchstart', (event) => {
+        touchStartY = event.touches[0].clientY;
+        tableOfContentsScrollTopStartPos = tableOfContents.scrollTop;
+    });
+
+    tableOfContents.addEventListener('touchmove', (event) => {
+        let deltaY = event.touches[0].clientY - touchStartY;
+
+        tableOfContents.scrollTop = tableOfContentsScrollTopStartPos - deltaY;
+
+        if (Math.abs(deltaY) > 10) {
+            for (let i = 0; i < tableOfContentsButtons.length; i++) {
+                tableOfContentsButtons[i].clickCanceled = true;
+            }
         }
     });
 
-    tableOfContents.addEventListener('touchend', function () {
-        // Disable pointer events on buttons when scrolling starts
-        for (var i = 0; i < tableOfContentsButtons.length; i++) {
-            tableOfContentsButtons[i].style.pointerEvents = 'auto';
+    tableOfContents.addEventListener('touchend', () => {
+        for (let i = 0; i < tableOfContentsButtons.length; i++) {
+            tableOfContentsButtons[i].clickCanceled = false;
         }
     });
 
@@ -105,7 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const iconInactivePath = 'Assets/Icons/arrow-thin-right.png';
         const iconActivePath = 'Assets/Icons/arrow-thin-up.png';
 
-        dropdownButton.addEventListener('click', () => {
+        function toggleDropdown() {
+            if (dropdownButton.clickCanceled)
+                return;
+
             dropdownButton.classList.toggle('active');
 
             if (dropdownButton.classList.contains('active')) {
@@ -120,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 nestedDropdown.classList.remove('active');
             }
-        });
+        }
+
+        dropdownButton.addEventListener('mouseup', toggleDropdown);
+        dropdownButton.addEventListener('touchend', toggleDropdown);
     });
 });
