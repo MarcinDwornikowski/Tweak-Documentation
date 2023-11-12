@@ -274,7 +274,7 @@ body {
 
 /* Dummy styling */
 .table-of-contents .dropdown {
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
 }
 
 .table-of-contents .dropdown-button {
