@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contentContainer.classList.toggle('side-navbar-active');
     });
 
-    // Table of contents custom hover and touch events for the buttons:
+    // Table of contents custom hover and touch events:
     const tableOfContents = document.getElementById('tableOfContents');
     const tableOfContentsButtons = tableOfContents.querySelectorAll('button');
 
@@ -36,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('touchend', () => {
             button.style.backgroundColor = previousBackgroundColor;
         });
+    });
+
+    tableOfContents.addEventListener('touchmove', (event) => {
+        // This will allow scroll on phones (prevents the button actions from stealing the scroll intent)
+        event.stopPropagation();
     });
 
     // Table of contents button paddings:
