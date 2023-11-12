@@ -38,9 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    tableOfContents.addEventListener('touchmove', (event) => {
-        // This will allow scroll on phones (prevents the button actions from stealing the scroll intent)
-        event.stopPropagation();
+    tableOfContents.addEventListener('touchstart', function () {
+        // Disable pointer events on buttons when scrolling starts
+        for (var i = 0; i < tableOfContentsButtons.length; i++) {
+            tableOfContentsButtons[i].style.pointerEvents = 'none';
+        }
+    });
+
+    tableOfContents.addEventListener('touchend', function () {
+        // Disable pointer events on buttons when scrolling starts
+        for (var i = 0; i < tableOfContentsButtons.length; i++) {
+            tableOfContentsButtons[i].style.pointerEvents = 'auto';
+        }
     });
 
     // Table of contents button paddings:
