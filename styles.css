@@ -1,14 +1,3 @@
-/* Set body styling */
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    min-width: 340px;
-    overflow-x: auto;
-}
-
 /* Reset default styling for all elements */
 * {
     margin: 0;
@@ -21,6 +10,22 @@ body {
     Here is an article explaining the problem:
     https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-tags-and-managing-overflow*/
     min-width: 0;
+}
+
+/* Set body styling */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 340px;
+    overflow-x: auto;
+}
+
+button {
+    /* Some safari mobile browsers could display different color by default */
+    color: #000;
 }
 
 ::-webkit-scrollbar-corner {
@@ -227,6 +232,10 @@ body {
     .table-of-contents button {
         font-size: 16px;
     }
+}
+
+.table-of-contents button.highlighted {
+    background-color: rgba(0, 0, 124, 0.1) !important;
 }
 
 .table-of-contents .icon-arrow {
