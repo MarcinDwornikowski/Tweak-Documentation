@@ -152,6 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdownButton.addEventListener('touchstart', () => activeTouchPoints++);
 
         dropdownButton.addEventListener('touchend', () => {
+            activeTouchPoints--;
+
             if (activeTouchPoints === 0)
                 toggleDropdown();
         });
