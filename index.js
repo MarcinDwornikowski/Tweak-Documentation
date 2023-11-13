@@ -14,29 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableOfContentsButtons = tableOfContents.querySelectorAll('button');
 
     tableOfContentsButtons.forEach(button => {
-        let activeTouchPoints = 0;
+        button.addEventListener('mouseover', button.classList.add('highlighted'));
 
-        button.addEventListener('mouseover', () => button.classList.add('highlighted'));
-
-        button.addEventListener('mouseout', () => button.classList.remove('highlighted'));
+        button.addEventListener('mouseout', button.classList.remove('highlighted'));
 
         button.addEventListener('touchstart', event => {
             event.preventDefault();
-            activeTouchPoints++;
 
-            if (activeTouchPoints === 1)
-                button.classList.add('highlighted');
+            button.classList.add('highlighted');
 
             // the event.preventDefault() prevents the click event so we invoke it manually:
             button.click();
         });
 
-        button.addEventListener('touchend', () => {
-            activeTouchPoints--;
-
-            if (activeTouchPoints === 0)
-                button.classList.remove('highlighted');
-        });
+        button.addEventListener('touchend', button.classList.remove('highlighted'));
     });
 
     // Table of contents allowing scroll over buttons on touch devices (scrolling manually):
@@ -119,8 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const iconInactivePath = 'Assets/Icons/arrow-thin-right.png';
         const iconActivePath = 'Assets/Icons/arrow-thin-up.png';
 
-        let activeTouchPoints = 0;
-
         function toggleDropdown() {
             if (dropdownButton.clickCanceled)
                 return;
@@ -142,14 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         dropdownButton.addEventListener('mouseup', toggleDropdown);
-
-        dropdownButton.addEventListener('touchstart', () => activeTouchPoints++);
-
-        dropdownButton.addEventListener('touchend', () => {
-            activeTouchPoints--;
-
-            if (activeTouchPoints === 0)
-                toggleDropdown();
-        });
+        dropdownButton.addEventListener('touchend', toggleDropdown);
     });
 });
