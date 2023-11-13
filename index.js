@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contentContainer.classList.toggle('side-navbar-active');
     });
 
-    // Table of contents custom hover and touch events for the buttons:
+    // Table of contents custom hover and touch events for the buttons' highlights:
     const tableOfContents = document.getElementById('tableOfContents');
     const tableOfContentsButtons = tableOfContents.querySelectorAll('button');
 
@@ -22,9 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.style.backgroundColor = 'rgba(0, 0, 124, 0.1)';
         });
 
-        button.addEventListener('mouseout', () => {
-            button.style.backgroundColor = previousBackgroundColor;
-        });
+        button.addEventListener('mouseout', () => button.style.backgroundColor = previousBackgroundColor);
 
         button.addEventListener('touchstart', event => {
             event.preventDefault();
@@ -42,9 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('touchend', () => {
             activeTouchPoints--;
 
-            if (activeTouchPoints === 0) {
+            if (activeTouchPoints === 0)
                 button.style.backgroundColor = previousBackgroundColor;
-            }
         });
     });
 
@@ -128,6 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const iconInactivePath = 'Assets/Icons/arrow-thin-right.png';
         const iconActivePath = 'Assets/Icons/arrow-thin-up.png';
 
+        let activeTouchPoints = 0;
+
         function toggleDropdown() {
             if (dropdownButton.clickCanceled)
                 return;
@@ -149,6 +148,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         dropdownButton.addEventListener('mouseup', toggleDropdown);
-        dropdownButton.addEventListener('touchend', toggleDropdown);
+
+        dropdownButton.addEventListener('touchstart', () => activeTouchPoints++);
+
+        dropdownButton.addEventListener('touchend', () => {
+            if (activeTouchPoints === 0)
+                toggleDropdown();
+        });
     });
 });
