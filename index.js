@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Table of contents button paddings:
     function tableOfContentsApplyPadding() {
         let regularPadding = 2;
-        let baseIndentPadding = 5;
+        let baseIndentPadding = 7;
 
         // Different paddings for different versions of the layout:
         if (window.innerWidth < 768) {
-            baseIndentPadding = 3;
+            baseIndentPadding = 5;
         }
 
         tableOfContentsButtons.forEach(button => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.style.paddingLeft = regularPadding + 'px';
             }
             else {
-                button.style.paddingLeft = indent * baseIndentPadding + 'px';
+                button.style.paddingLeft = indent * baseIndentPadding + regularPadding + 'px';
             }
 
             // let p = button.querySelector('p');
