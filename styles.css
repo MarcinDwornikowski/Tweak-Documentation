@@ -416,7 +416,8 @@ body {
 
 /* Colors for the code styling resembling default Visual Studio: */
 .code .blue {
-    color: #549ad4;
+    /* color: #549ad4; */
+    color: red;
 }
 
 .code .lightBlue {
