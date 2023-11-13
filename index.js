@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableOfContentsButtons = tableOfContents.querySelectorAll('button');
 
     tableOfContentsButtons.forEach(button => {
-        button.addEventListener('mouseover', button.classList.add('highlighted'));
+        button.addEventListener('mouseover', () => button.classList.add('highlighted'));
 
-        button.addEventListener('mouseout', button.classList.remove('highlighted'));
+        button.addEventListener('mouseout', () => button.classList.remove('highlighted'));
 
         button.addEventListener('touchstart', event => {
             event.preventDefault();
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.click();
         });
 
-        button.addEventListener('touchend', button.classList.remove('highlighted'));
+        button.addEventListener('touchend', () => button.classList.remove('highlighted'));
     });
 
     // Table of contents allowing scroll over buttons on touch devices (scrolling manually):
