@@ -14,24 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableOfContentsButtons = tableOfContents.querySelectorAll('button');
 
     tableOfContentsButtons.forEach(button => {
-        let previousBackgroundColor;
         let activeTouchPoints = 0;
 
-        button.addEventListener('mouseover', () => {
-            previousBackgroundColor = button.style.backgroundColor;
-            button.style.backgroundColor = 'rgba(0, 0, 124, 0.1)';
-        });
+        button.addEventListener('mouseover', () => button.classList.add('highlighted'));
 
-        button.addEventListener('mouseout', () => button.style.backgroundColor = previousBackgroundColor);
+        button.addEventListener('mouseout', () => button.classList.remove('highlighted'));
 
         button.addEventListener('touchstart', event => {
             event.preventDefault();
             activeTouchPoints++;
 
-            if (activeTouchPoints === 1) {
-                previousBackgroundColor = button.style.backgroundColor;
-                button.style.backgroundColor = 'rgba(0, 0, 124, 0.1)';
-            }
+            if (activeTouchPoints === 1)
+                button.classList.add('highlighted');
 
             // the event.preventDefault() prevents the click event so we invoke it manually:
             button.click();
@@ -41,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             activeTouchPoints--;
 
             if (activeTouchPoints === 0)
-                button.style.backgroundColor = previousBackgroundColor;
+                button.classList.remove('highlighted');
         });
     });
 

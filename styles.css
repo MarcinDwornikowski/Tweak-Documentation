@@ -229,6 +229,10 @@ body {
     }
 }
 
+.table-of-contents button.highlighted {
+    background-color: rgba(0, 0, 124, 0.1) !important;
+}
+
 .table-of-contents .icon-arrow {
     width: auto;
     /* Ensure the icon doesn't exceed it's container */
