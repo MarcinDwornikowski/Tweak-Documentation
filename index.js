@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             button.classList.add('highlighted');
 
-            // the event.preventDefault() prevents the click event so we invoke it manually:
+            // The event.preventDefault() prevents the click event so we invoke it manually:
             button.click();
         });
 
@@ -107,24 +107,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const dropdownButton = dropdown.querySelector('.dropdown-button');
 
         const icon = dropdownButton.querySelector('.icon-arrow');
-        const iconInactivePath = 'Assets/Icons/arrow-thin-right.png';
-        const iconActivePath = 'Assets/Icons/arrow-thin-up.png';
+        const iconInactive = {
+            src: 'Assets/Icons/arrow-thin-right.png',
+            alt: 'Arrow right icon'
+        };
+        const iconActive = {
+            src: 'Assets/Icons/arrow-thin-up.png',
+            alt: 'Arrow up icon'
+        };
 
         function toggleDropdown() {
-            if (dropdownButton.clickCanceled)
+            if (dropdownButton.clickCanceled) {
                 return;
+            }
 
             dropdownButton.classList.toggle('active');
 
             if (dropdownButton.classList.contains('active')) {
-                icon.src = iconActivePath;
-                icon.alt = 'Arrow up icon';
+                icon.src = iconActive.src;
+                icon.alt = iconActive.alt;
 
                 nestedDropdown.classList.add('active');
             }
             else {
-                icon.src = iconInactivePath;
-                icon.alt = 'Arrow right icon';
+                icon.src = iconInactive.src;
+                icon.alt = iconInactive.alt;
 
                 nestedDropdown.classList.remove('active');
             }
