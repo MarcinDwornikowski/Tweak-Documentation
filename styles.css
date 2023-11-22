@@ -48,16 +48,24 @@ button {
 }
 
 /* TOPBAR: */
-.below-topbar {
-    /* Compensate topbar's height: */
-    padding-top: 50px;
+@media screen and (min-width: 541px) {
+    .below-topbar {
+        /* Compensate topbar's height: */
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .below-topbar {
+        /* Compensate topbar's height: */
+        padding-top: 45px;
+    }
 }
 
 .topbar {
     top: 0;
     color: black;
     background-color: olivedrab;
-    height: 50px;
     display: flex;
     align-items: center;
     pointer-events: auto;
@@ -65,18 +73,21 @@ button {
 
 @media screen and (min-width: 768px) {
     .topbar {
+        height: 50px;
         padding: 0px 20px;
     }
 }
 
 @media screen and (min-width: 541px) and (max-width: 767px) {
     .topbar {
-        padding: 0px 15px;
+        height: 50px;
+        padding: 0px 5px 0px 15px;
     }
 }
 
 @media screen and (max-width: 540px) {
     .topbar {
+        height: 45px;
         padding: 0px 5px 0px 12px;
     }
 }
@@ -98,13 +109,7 @@ button {
     }
 }
 
-@media screen and (min-width: 485px) and (max-width: 540px) {
-    .logo {
-        margin-left: 12px;
-    }
-}
-
-@media screen and (max-width: 484px) {
+@media screen and (max-width: 540px) {
     .logo {
         margin-left: 12px;
     }
@@ -127,7 +132,7 @@ button {
     color: coral;
 }
 
-@media screen and (min-width: 485px) {
+@media screen and (min-width: 541px) {
     .navbar a {
         font-size: 16px;
         margin: 0 15px;
@@ -138,7 +143,18 @@ button {
     }
 }
 
-@media screen and (max-width: 484px) {
+@media screen and (min-width: 381px) and (max-width: 540px) {
+    .navbar a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    .navbar a.current {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 380px) {
     .navbar a {
         font-size: 14px;
         margin: 0 10px;
@@ -164,14 +180,14 @@ button {
     justify-content: space-between;
 }
 
-@media screen and (min-width: 485px) {
+@media screen and (min-width: 541px) {
     .burger-menu-icon {
         width: 30px;
         height: 20px;
     }
 }
 
-@media screen and (max-width: 484px) {
+@media screen and (max-width: 540px) {
     .burger-menu-icon {
         width: 25px;
         height: 17px;
