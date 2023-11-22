@@ -11,6 +11,24 @@
     min-width: 0;
 }
 
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    html {
+        font-size: 14px;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -95,26 +113,26 @@ button {
 .logo {
     display: flex;
     flex: 1;
+    font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
     .logo {
         margin-left: 20px;
+        font-size: 32px;
     }
 }
 
 @media screen and (min-width: 541px) and (max-width: 767px) {
     .logo {
         margin-left: 15px;
+        font-size: 32px;
     }
 }
 
 @media screen and (max-width: 540px) {
     .logo {
         margin-left: 12px;
-    }
-
-    .logo h1 {
         font-size: 25px;
     }
 }
@@ -134,7 +152,6 @@ button {
 
 @media screen and (min-width: 541px) {
     .navbar a {
-        font-size: 16px;
         margin: 0 15px;
     }
 
@@ -145,7 +162,6 @@ button {
 
 @media screen and (min-width: 381px) and (max-width: 540px) {
     .navbar a {
-        font-size: 14px;
         margin: 0 10px;
     }
 
@@ -156,7 +172,6 @@ button {
 
 @media screen and (max-width: 380px) {
     .navbar a {
-        font-size: 14px;
         margin: 0 10px;
     }
 
@@ -277,7 +292,6 @@ button {
     border: none;
     padding: 0;
     font-family: inherit;
-    font-size: inherit;
     text-align: start;
     cursor: pointer;
     align-items: center;
@@ -285,19 +299,19 @@ button {
 
 @media screen and (min-width: 768px) {
     .table-of-contents button {
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 
 @media screen and (min-width: 541px) and (max-width: 767px) {
     .table-of-contents button {
-        font-size: 15px;
+        font-size: 0.95rem;
     }
 }
 
 @media screen and (max-width: 540px) {
     .table-of-contents button {
-        font-size: 13px;
+        font-size: 0.9rem;
     }
 }
 
@@ -327,7 +341,7 @@ button {
 
 @media screen and (max-width: 540px) {
     .table-of-contents .icon-arrow {
-        height: 15px;
+        height: 14px;
     }
 }
 
