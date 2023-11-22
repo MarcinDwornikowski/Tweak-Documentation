@@ -63,15 +63,21 @@ button {
     pointer-events: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+    .topbar {
+        padding: 0px 20px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
     .topbar {
         padding: 0px 15px;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 540px) {
     .topbar {
-        padding: 0px 20px;
+        padding: 0px 5px 0px 12px;
     }
 }
 
@@ -80,15 +86,31 @@ button {
     flex: 1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+    .logo {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
     .logo {
         margin-left: 15px;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 485px) and (max-width: 540px) {
     .logo {
-        margin-left: 20px;
+        margin-left: 12px;
+    }
+}
+
+@media screen and (max-width: 484px) {
+    .logo {
+        margin-left: 12px;
+    }
+
+    .logo h1 {
+        font-size: 25px;
     }
 }
 
@@ -105,17 +127,6 @@ button {
     color: coral;
 }
 
-@media screen and (max-width: 485px) {
-    .navbar a {
-        font-size: 13px;
-        margin: 0 10px;
-    }
-
-    .navbar a.current {
-        display: none;
-    }
-}
-
 @media screen and (min-width: 485px) {
     .navbar a {
         font-size: 16px;
@@ -124,6 +135,17 @@ button {
 
     .navbar a.current {
         display: block;
+    }
+}
+
+@media screen and (max-width: 484px) {
+    .navbar a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    .navbar a.current {
+        display: none;
     }
 }
 
@@ -140,8 +162,20 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 20px;
+}
+
+@media screen and (min-width: 485px) {
+    .burger-menu-icon {
+        width: 30px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 484px) {
+    .burger-menu-icon {
+        width: 25px;
+        height: 17px;
+    }
 }
 
 /* Shape for the burger menu icon */
@@ -162,15 +196,21 @@ button {
     display: none;
 }
 
-@media screen and (max-width: 768px) {
-    .side-navbar {
-        width: 130px;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .side-navbar {
         width: 200px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    .side-navbar {
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .side-navbar {
+        width: 130px;
     }
 }
 
@@ -190,17 +230,24 @@ button {
     padding-right: 100px;
 }
 
-@media screen and (max-width: 768px) {
-    .table-of-contents {
-        margin: 0px 3px 0px 3px;
-        padding-top: 3px;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .table-of-contents {
         margin: 0px 5px 0px 5px;
         padding-top: 5px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    .table-of-contents {
+        margin: 0px 4px 0px 4px;
+        padding-top: 4px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .table-of-contents {
+        margin: 0px 3px 0px 3px;
+        padding-top: 3px;
     }
 }
 
@@ -220,15 +267,21 @@ button {
     align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-    .table-of-contents button {
-        font-size: 13px;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .table-of-contents button {
         font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    .table-of-contents button {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .table-of-contents button {
+        font-size: 13px;
     }
 }
 
@@ -244,15 +297,21 @@ button {
     padding-right: 5px;
 }
 
-@media screen and (max-width: 768px) {
-    .table-of-contents .icon-arrow {
-        height: 12px;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .table-of-contents .icon-arrow {
         height: 20px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    .table-of-contents .icon-arrow {
+        height: 17px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .table-of-contents .icon-arrow {
+        height: 15px;
     }
 }
 
@@ -265,17 +324,24 @@ button {
     height: 100%;
 }
 
-@media screen and (max-width: 768px) {
-    .table-of-contents .item-button {
-        padding-top: 7px;
-        padding-bottom: 7px;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .table-of-contents .item-button {
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    .table-of-contents .item-button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .table-of-contents .item-button {
+        padding-top: 7px;
+        padding-bottom: 7px;
     }
 }
 
@@ -291,17 +357,24 @@ button {
     display: flex;
 }
 
-@media screen and (max-width: 768px) {
-    .table-of-contents .dropdown-button {
-        padding-top: 7px;
-        padding-bottom: 7px;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .table-of-contents .dropdown-button {
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    .table-of-contents .dropdown-button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .table-of-contents .dropdown-button {
+        padding-top: 7px;
+        padding-bottom: 7px;
     }
 }
 
@@ -334,17 +407,24 @@ button {
     margin-left: 0px;
 }
 
-@media screen and (max-width: 485px) {
+@media screen and (min-width: 768px) {
+    .content-container {
+        padding: 25px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    .content-container {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 540px) {
     .content-container {
         padding: 10px;
     }
 }
 
-@media screen and (min-width: 485px) {
-    .content-container {
-        padding: 25px;
-    }
-}
 
 .content-container section {
     display: flex;
@@ -357,19 +437,27 @@ button {
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-
-    /* Applied when side navbar is active */
-    .content-container.side-navbar-active {
-        margin-left: 130px;
-    }
-}
-
 @media screen and (min-width: 768px) {
 
     /* Applied when side navbar is active */
     .content-container.side-navbar-active {
         margin-left: 200px;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+
+    /* Applied when side navbar is active */
+    .content-container.side-navbar-active {
+        margin-left: 160px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    /* Applied when side navbar is active */
+    .content-container.side-navbar-active {
+        margin-left: 130px;
     }
 }
 

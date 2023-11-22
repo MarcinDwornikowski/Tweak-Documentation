@@ -63,7 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let baseIndentPadding = 7;
 
         // Different paddings for different versions of the layout:
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 768 && window.innerWidth >= 541) {
+            baseIndentPadding = 5;
+        }
+        else if (window.innerWidth < 540) {
             baseIndentPadding = 5;
         }
 
