@@ -80,19 +80,37 @@ button {
     }
 }
 
+.topbar-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.topbar-scroll-container {
+    width: 100%;
+    overflow: scroll;
+    /* Add some space to the bottom (hidden by the parent) - to hide the scrollbar: */
+    padding-bottom: 100px;
+    position: absolute;
+}
+
 .topbar {
-    top: 0;
     color: black;
     background-color: olivedrab;
     display: flex;
     align-items: center;
     pointer-events: auto;
+    min-width: 315px;
 }
 
 @media screen and (min-width: 768px) {
     .topbar {
         height: 50px;
-        padding: 0px 20px;
+        padding: 0px 20px 0px 20px;
+    }
+
+    .topbar-container {
+        height: 50px;
     }
 }
 
@@ -101,12 +119,20 @@ button {
         height: 50px;
         padding: 0px 5px 0px 15px;
     }
+
+    .topbar-container {
+        height: 50px;
+    }
 }
 
 @media screen and (max-width: 540px) {
     .topbar {
         height: 45px;
         padding: 0px 5px 0px 12px;
+    }
+
+    .topbar-container {
+        height: 45px;
     }
 }
 
