@@ -61,6 +61,7 @@ body {
 button {
     /* Some safari mobile browsers could display different color by default */
     color: #000;
+    font-family: domine;
 }
 
 pre,
@@ -162,10 +163,9 @@ code {
 }
 
 .logo {
-    display: flex;
-    flex: 1;
     font-weight: bold;
     padding-top: 1px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -235,8 +235,11 @@ code {
 /* Positions at the baseline */
 .baseline {
     display: flex;
-    flex: 1;
     align-items: baseline;
+}
+
+.flex-1 {
+    flex: 1;
 }
 
 /* Styles for the burger menu icon */
