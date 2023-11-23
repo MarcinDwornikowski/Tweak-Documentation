@@ -1,3 +1,21 @@
+@font-face {
+    font-family: domine;
+    src: url(assets/fonts/domine/Domine-Regular.ttf) format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: domine;
+    src: url(assets/fonts/domine/Domine-Bold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: martian-mono;
+    src: url(assets/fonts/martian-mono/MartianMono-Regular.ttf) format('truetype');
+    font-weight: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,23 +31,24 @@
 
 @media screen and (min-width: 768px) {
     html {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
 @media screen and (min-width: 541px) and (max-width: 767px) {
     html {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
 
 @media screen and (max-width: 540px) {
     html {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
 body {
+    font-family: domine;
     margin: 0;
     padding: 0;
     display: flex;
@@ -42,6 +61,12 @@ body {
 button {
     /* Some safari mobile browsers could display different color by default */
     color: #000;
+}
+
+pre,
+code {
+    font-family: martian-mono, monospace;
+    font-size: 0.8rem;
 }
 
 ::-webkit-scrollbar-corner {
@@ -100,7 +125,7 @@ button {
     display: flex;
     align-items: center;
     pointer-events: auto;
-    min-width: 315px;
+    min-width: 345px;
 }
 
 @media screen and (min-width: 768px) {
@@ -140,6 +165,7 @@ button {
     display: flex;
     flex: 1;
     font-weight: bold;
+    padding-top: 1px;
 }
 
 @media screen and (min-width: 768px) {
